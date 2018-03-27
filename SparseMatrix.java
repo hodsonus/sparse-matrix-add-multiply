@@ -214,7 +214,7 @@ public class SparseMatrix implements SparseInterface {
   @Override
   public SparseInterface multiplyMatrices(SparseInterface matrixToMultiply) {
 
-    //check to see if the number of columns and the number of rows match. if not, return null
+    //check to see if the number of columns in this and the number of rows in matrixToMultiply match. if not, return null
     if (this.getNumCols() != ((SparseMatrix)matrixToMultiply).getNumRows()) return null;
 
     //create the newMatrix that will be the product of our matrices.
@@ -222,7 +222,7 @@ public class SparseMatrix implements SparseInterface {
 
     int sum;
 
-    //iterate over and fill ech entry of our new matrix
+    //iterate over and fill each entry of our new matrix
     for (int i = 0; i < newMatrix.getNumRows(); i++) {
 
       for (int j = 0; j < newMatrix.getNumCols(); j++) {
@@ -235,10 +235,12 @@ public class SparseMatrix implements SparseInterface {
           sum += this.getElement(i,m)*((SparseMatrix)matrixToMultiply).getElement(n,j);
         }
 
+        //place the sum into the ith jth element of newMatrix
         newMatrix.addElement(i, j, sum);
       }
     }
 
+    //return out new matrix
     return newMatrix;
   }
 }
