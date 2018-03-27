@@ -59,13 +59,13 @@ public class Test {
         myTest.addElement(2, 2, 7);
         
         SparseInterface addTest1 = new SparseMatrix();
-	addTest1.setSize(3, 3);
+	    addTest1.setSize(3, 3);
         addTest1.addElement(0, 0, 1);
         addTest1.addElement(1, 1, 2);
         addTest1.addElement(2, 2, 3);
         
         SparseInterface addTest2 = new SparseMatrix();
-	addTest2.setSize(3, 3);
+    	addTest2.setSize(3, 3);
         addTest2.addElement(0, 0, 3);
         addTest2.addElement(0, 0, 2);
         addTest2.addElement(0, 0, 1);
@@ -106,6 +106,16 @@ public class Test {
 	SparseInterface test3 = test1.addMatrices(test2);  //should return null
 	SparseInterface test4 = test1.multiplyMatrices(test2); //should work
 	SparseInterface test5 = test2.multiplyMatrices(test1); //should return null
+
+    boolean testy3 = test3 == null;
+    boolean testy4 = test4 == null;
+    boolean testy5 = test5 == null;
+
+    System.out.println("test3 null? " + testy3);
+    System.out.println("test4 null? " + testy4);
+    System.out.println("test5 null? " + testy5);
+
+
 
         
     }
